@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="title">JSON stuffff.</h2>
+<p id="subheading">you got this</p>
+<p id="demo"></p>
+<button id="button">hey</button>
+
+<p id="pairings"></p>
+<button id="button2">restart</button>
+
+
+<script>
+
+const myButton = document.getElementById('button');
+
+const text = '[ "Hello", "Hey", "Hola", "Sup" ]'; // this is the acting JSON data
+
+myButton.addEventListener('click', function () {
+    const myArr = JSON.parse(text);
+document.getElementById("demo").innerHTML = myArr[0];
+document.getElementById("button").hidden = true;
+document.getElementById("title").hidden = true;
+document.getElementById("subheading").hidden = true; // this handler sets it up to present the data on click and then hide the button
+})
+
+const otherButton = document.getElementById('button2');
+
+const symbols = ["!", "@", "#", "$"];
+
+otherButton.addEventListener('click', function () {
+    document.getElementById("pairings").innerHTML = symbols[0]; //this grabs the 0-index
+    let storedSymbol = symbols.shift() // this stores what is shifted off the front
+    symbols.push(storedSymbol); // this pushes what was shifted off
+}) // overall this makes it so that the symbols are rotating through
+</script>
+
+</body>
+</html>
