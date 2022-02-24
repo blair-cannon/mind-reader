@@ -11,15 +11,34 @@ const helperTextArr = [ "when you have your number click next", "Ex: 14 is 1 + 4
 // create parent class 
 
 class Page {
-    constructor(headerState, cirButtonState, helperText, recButtonState) {
+    constructor(
+        headerState,
+        cirButtonState,
+        helperText, 
+        recButtonState, 
+        helperTextVisible = false, 
+        circleButtonVisible = false, 
+        recButtonVisible = false
+          ) 
+          {
         this.headerState = headerState;
         this.cirButtonState = cirButtonState;
         this.helperText = helperText;
         this.recButtonState = recButtonState;
+
+        this.helperTextVisible = helperTextVisible;
+        this.circleButtonVisible = circleButtonVisible;
+        this.recButtonVisible = recButtonVisible;
         this.exists = false;
     }
     create() {
-        this.exists = true; // needed to differentiate pages
+        document.getElementById("header").innerHTML = this.headerState;
+        document.getElementById("circle").innerHTML = this.cirButtonState;
+        document.getElementById("help").innerHTML = this.helperText;
+        document.getElementById("rectangle").innerHTML = this.recButtonState;
+        document.get
+        this.exists = true;  // needed to differentiate pages
+        
     }
     
     turnOff() {
@@ -31,35 +50,35 @@ class Page {
 // create first instance 
 
 const page1 = new Page (
-    headerState = document.getElementById("header").innerHTML = headerTextArr[0],
-    cirButtonState = document.getElementById("circle").hidden = false,
-    document.getElementById("circle").innerHTML = circleTextArr[0],
-    helperText = document.getElementById("help").hidden = true,
-    recButtonState = document.getElementById("rectangle").hidden = true,
-   
+    headerTextArr[0],
+    circleTextArr[0],
+    "",
+    "", 
+    false, 
+    true, 
+    false
 )
 
 page1.create();
 
-// // page 2 instance 
+// page 2 instance 
 
 
-// const page2 = new Page (
-//     headerState = document.getElementById("header").innerHTML = headerTextArr[1],
-//     cirButtonState = document.getElementById("circle").hidden = false,
-//     document.getElementById("circle").innerHTML = circleTextArr[1],
-//     recButtonState = document.getElementById("rectangle").hidden = false,
-//     document.getElementById("rectangle").innerHTML = rectTextArr[0],
-//     helperText = document.getElementById("help").hidden = false,
-//     document.getElementById("help").innerHTML = helperTextArr[0],
-// )
+const page2 = new Page (
+    headerTextArr[1],
+    circleTextArr[1],
+    rectTextArr[0],
+    true,
+    true,
+    true )
 
-// // change to page 2 on click of go
 
-// document.getElementById("circle").addEventListener('click', function () {
-//         page2.create(); 
-//         page1.turnOff();
-// })
+// change to page 2 on click of go
+
+document.getElementById("circle").addEventListener('click', function () {
+        page2.create(); 
+        page1.turnOff();
+})
 
 // // page 3 instance 
 
