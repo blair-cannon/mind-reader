@@ -154,4 +154,16 @@ helperText[5] rotateSymbols:
                 3. symbol that was second is now first for this round
 
 
-//lools into init function (can be called to restart/reset...same thing)
+//look into init function (can be called to restart/reset...same thing)
+
+TODO:
+-apply bootstrap:
+        - scroll aspect
+        - arrow for circle button
+        - circle button
+        - rectangle button
+        - colors
+        - fonts
+        - iphone look 
+-make sure symbols can be pulled from array into heading and into helper text
+-get restart button to work
