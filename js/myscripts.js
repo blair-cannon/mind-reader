@@ -19,7 +19,7 @@ class Page {
         this.exists = false;
     }
     create() {
-        this.exists = true; //needed to differentiate pages
+        this.exists = true; // needed to differentiate pages
     }
     
     turnOff() {
@@ -57,7 +57,7 @@ page1.create();
 // // change to page 2 on click of go
 
 // document.getElementById("circle").addEventListener('click', function () {
-//         page2.create();
+//         page2.create(); 
 //         page1.turnOff();
 // })
 

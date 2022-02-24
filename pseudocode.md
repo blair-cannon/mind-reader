@@ -167,3 +167,4 @@ TODO:
         - iphone look 
 -make sure symbols can be pulled from array into heading and into helper text
 -get restart button to work
+-remove event listeners
