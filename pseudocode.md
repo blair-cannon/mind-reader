@@ -162,4 +162,5 @@ TODO:
         - arrow for circle button
         - iphone look 
 -make sure symbols can be pulled from array into heading and into helper text
+-pair number with symbols
 -get restart button to work
