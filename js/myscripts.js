@@ -65,8 +65,16 @@ const page1 = new Page (
 
 page1.create();
 
-// page 2 instance 
+// change to page 2 on click of go on page 1
 
+circle.addEventListener('click', function () {
+    page1.turnOff();
+    page2.create(); 
+})
+
+circle.removeEventListener('click', page1); // removes event listener to clear it for the next one
+
+// page 2 instance 
 
 const page2 = new Page (
     headerTextArr[1],
@@ -78,15 +86,19 @@ const page2 = new Page (
     true)
 
 
-// change to page 2 on click of go
+// change to page 3 on click of next on page 2
 
-document.getElementById("circle").addEventListener('click', function () {
-        page2.create(); 
-        page1.turnOff();
+rectangle.addEventListener('click', function () {
+    page2.turnOff();
+    page3.create();
+
+    page1.turnOff();
+    page4.turnOff();
+    page5.turnOff();
+    page6.turnOff();
 })
 
-document.getElementById("circle").removeEventListener('click', page1); // removes event listener to clear it for the next one
-
+rectangle.removeEventListener('click', page2); // removes event listener to clear it for the next one
 
 // page 3 instance 
 
@@ -100,68 +112,47 @@ const page3 = new Page (
     true)
 
 
-// change to page 3 on click of next
+// change to page 4 on click of next on page 3
 
-document.getElementById("rectangle").addEventListener('click', function () {
+// rectangle.addEventListener('click', function () {
+//     page3.turnOff();
+//     page4.create();
+// })
 
-        page3.create();
-        page2.turnOff();
-})
+// rectangle.removeEventListener('click', page3); // removes event listener to clear it for the next one
 
-document.getElementById("rectangle").removeEventListener('click', page2); // removes event listener to clear it for the next one
+// // page 4 instance
 
-// page 4 instance
+// const page4 = new Page (
+//     headerTextArr[3],
+//     circleTextArr[1],
+//     helperTextArr[2],
+//     rectTextArr[0],
+//     true,
+//     true,
+//     true)
 
-const page4 = new Page (
-    headerTextArr[3],
-    circleTextArr[1],
-    helperTextArr[2],
-    rectTextArr[0],
-    true,
-    true,
-    true)
+// // change to page 5 on click of next
 
-// change to page 4 on click of next
+// rectangle.addEventListener('click', function () {
 
-document.getElementById("rectangle").addEventListener('click', function () {
+//          page4.turnOff();
+//         page5.create();
+// })
 
-        page4.create();
-        page3.turnOff();
-})
+// document.getElementById("rectangle").removeEventListener('click', page4); // removes event listener to clear it for the next one
 
-document.getElementById("rectangle").removeEventListener('click', page3); // removes event listener to clear it for the next one
+// // page 5 instance
 
-// page 5 instance
+// const page5 = new Page (
+//     headerTextArr[4],
+//     circleTextArr[1],
+//     helperTextArr[3],
+//     rectTextArr[1],
+//     true,
+//     true,
+//     true)
 
-const page5 = new Page (
-    headerTextArr[4],
-    circleTextArr[1],
-    helperTextArr[3],
-    rectTextArr[1],
-    true,
-    true,
-    true)
-
-// change to page 5 on click of next
-
-document.getElementById("rectangle").addEventListener('click', function () {
-
-        page5.create();
-        page4.turnOff();
-})
-
-document.getElementById("rectangle").removeEventListener('click', page4); // removes event listener to clear it for the next one
-
-// // page 6 instance
-
-// const page6 = new Page (
-//     headerState = document.getElementById("header").innerHTML = headerTextArr[5],
-//     cirButtonState = document.getElementById("circle").hidden = false,
-//     document.getElementById("circle").innerHTML = circleTextArr[1],
-//     recButtonState = document.getElementById("rectangle").hidden = true,
-//     helperText = document.getElementById("help").hidden = false,
-//     document.getElementById("help").innerHTML = helperTextArr[4],
-// )
 
 // // change to page 6 on click of next and rotates the symbols array for the next game
 
@@ -173,8 +164,22 @@ document.getElementById("rectangle").removeEventListener('click', page4); // rem
 //         symbolsArray.push(storedSymbol); // this puts the stored value at the end of the array
 // })
 
+// document.getElementById("rectangle").removeEventListener('click', page5); // removes event listener to clear it for the next one
 
-// add restart ability to circle button for all pages except the first page
+
+// // page 6 instance
+
+// const page6 = new Page (
+//     headerTextArr[5],
+//     circleTextArr[1],
+//     helperTextArr[4],
+//     "",
+//     true,
+//     true, 
+//     false)
+
+
+// // add restart ability to circle button for all pages except the first page
 
 // if (Page != page1) {
 //     document.getElementById("circle").addEventListener('click', function () {
