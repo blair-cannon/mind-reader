@@ -1,6 +1,6 @@
 // input all needed data
 
-const nineSymbolsArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+const nineSymbolsArray = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "~"];
 
 const randomizeArray = (symbols) => {
     let storedSymbol = symbols.shift(); // this stores what is shifted off the front
@@ -74,7 +74,7 @@ class Page {
         document.getElementById("help").innerHTML = this.helperText;
         document.getElementById("rectangle").innerHTML = this.recButtonState;
         document.getElementById("help").style.display = this.helperTextDisplay ? "initial" : "none";
-        document.getElementById("circle").style.display = this.circleButtonDisplay ? "initial" : "none";
+        document.getElementById("circle").style.display = this.circleButtonDisplay ? "initial" : "none"; //truthy, falsey
         document.getElementById("rectangle").style.display = this.recButtonDisplay ? "initial" : "none";
         
         this.exists = true;  // needed to differentiate pages
