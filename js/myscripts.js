@@ -106,7 +106,9 @@ class Page {
             console.log(this.rectangleDestination);
 
             if (circleDestination.pageNumber === 5) {
-                symbolsArray = randomizeArray(symbolsArray);}
+                symbolsArray = randomizeArray(symbolsArray);
+                return symbolsArray;
+        }
     }
 }
 
@@ -173,11 +175,7 @@ const page5 = new Page (
     rectTextArr[1],
     true,
     true,
-    true,
-    
-    // document.getElementsByClassName("scroll").style.display = "block"
-
-        
+    true    
     )
 
 
