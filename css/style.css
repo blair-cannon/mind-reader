@@ -1,14 +1,44 @@
+body {
+    margin: 10px;
+}
+
 #header {
     color: grey;
     font-size: 3em;
     font-weight:300;
+    padding-bottom: 100px;
 }
 
 #circle {
-    color: lightblue;
+    color: lightskyblue;
     border-radius: 50%;
-    padding: 15px;
+    padding: 20px;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 400px;
+    right: 1000px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#rectangle {
+    color: white;
+    background-color: lightskyblue;
+    border-color: grey;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    margin-left: 150px;
+    cursor: pointer;
+    border-radius: 0%;
+    font-size: 25px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+}
+
+#help {
+    color: lightskyblue;
+    font-size: 20px;
+    margin-left: 80px;
+    margin-top: 40px;
 }
